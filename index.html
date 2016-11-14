@@ -38,16 +38,30 @@
         display: flex;
         align-items: baseline;
       }
-      #place-buttons > section > h3 {
-        cursor: pointer;
-      }
+      /* Accordion things */
       .accordion {
         display: flex;
         flex-direction: column;
       }
+      .accordion > header {
+        display: flex;
+        align-items: baseline;
+        cursor: pointer;
+      }
+      .accordion > header > .fa {
+        padding: 1em;
+        transition: all 300ms ease-out;
+      }
+      .accordion > header.closed > .fa {
+        transform: rotate(-90deg);
+      }
       .accordion > section {
         display: flex;
         flex-direction: column;
+        transition: all 300 ease-out;
+      }
+      .accordion > section.closed{
+        display: none;
       }
       label[for="search-input"] {
         padding: 1em;
@@ -77,8 +91,6 @@
       </section>
       <!-- Button subsection -->
       <section id="place-buttons" class="accordion">
-        <section>
-        </section>
       </section>
     </aside>
     <!-- Functionality -->
@@ -96,9 +108,25 @@
         map.setCenter({lat: place.lat, lng: place.lng});
       }
 
+      function openAccordion(header) {
+        // $('.accordion').children().removeClass('closed');
+        $(header).siblings().addClass('closed');
+        $(header).removeClass('closed');
+        $(header).next().removeClass('closed');
+      }
+
       function initMap() {
         // Place data
         var placeGroups = [{
+          title: 'Accommodation',
+          places: [{
+            lat: 55.940417,
+            lng: -3.171280,
+            title: 'Pollock Halls',
+            content: '<h3>Pollock Halls</h3><p>This is Pollock Halls. Freshers live here.</p>',
+            subplaces: []
+          }]
+        }, {
           title: 'Uni Buildings',
           places: [{
             lat: 55.946036,
@@ -163,15 +191,23 @@
         // Place groups
         for (var i = 0; i < placeGroups.length; i++) {
           var group = placeGroups[i];
-          var buttonGroup = $('<section>')
-            .attr('group-idx', i);
+          // Section header
+          var accordionSectionHeader = $('<header>')
+            .click(function (evt) {
+              openAccordion($(this));
+            })
+            .appendTo($('#place-buttons'));
+          var chevron = $('<i>')
+            .addClass('fa fa-chevron-down')
+            .appendTo(accordionSectionHeader);
           var groupHeading = $('<h3>')
             .text(group.title)
-            .click(function (evt) {
-              var groupIdx = $(this).parent().attr('group-idx');
-              fitToGroup(map, placeGroups[groupIdx])
-            })
-            .appendTo(buttonGroup);
+            .appendTo(accordionSectionHeader);
+
+          // Section content
+          var accordionSection = $('<section>')
+            .attr('group-idx', i)
+            .appendTo($('#place-buttons'));
 
           // Places
           for (var j = 0; j < group.places.length; j++) {
@@ -184,7 +220,7 @@
                 var placeIdx = $(this).attr('place-idx');
                 fitToPlace(map, placeGroups[groupIdx].places[placeIdx]);
               })
-              .appendTo(buttonGroup);
+              .appendTo(accordionSection);
             var buttonHeading = $('<h3>')
               .text(place.title)
               .appendTo(button);
@@ -199,8 +235,8 @@
                 .appendTo(list);
             }
           }
-          $('#place-buttons').append(buttonGroup);
-        }
+        } // outer for loop
+        openAccordion($('#place-buttons').children().first())
       }
     </script>
     <!-- Google Maps dependency -->
