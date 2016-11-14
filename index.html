@@ -1,0 +1,209 @@
+<html>
+  <head>
+    <!-- Fix scaling for mobile users (good practice) -->
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <!-- Roboto (the Android font) because it's pretty -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+    <!-- Font Awesome for pretty icons -->
+    <script src="https://use.fontawesome.com/dd225ee618.js"></script>
+    <!-- jQuery because I'm too lazy to write native dom code -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <style>
+      body {
+        display: flex;
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+      }
+      h1 {
+        font-size: 1.71rem;
+        font-weight: 400;
+      }
+      h2 {
+        font-size: 1.43rem;
+        font-weight: 500;
+      }
+      #map {
+        flex-grow: 1;
+      }
+      #places {
+        flex-basis: 20em;
+        order: 1;
+        padding: 1em;
+        box-shadow: -0px 0 20px #000
+      }
+      #search {
+        display: flex;
+        align-items: baseline;
+      }
+      #place-buttons > section > h3 {
+        cursor: pointer;
+      }
+      .accordion {
+        display: flex;
+        flex-direction: column;
+      }
+      .accordion > section {
+        display: flex;
+        flex-direction: column;
+      }
+      label[for="search-input"] {
+        padding: 1em;
+        margin-right: -3rem;
+        flex-basis: 1rem;
+        text-align: center;
+        z-index: 99;
+      }
+      input[type="search"] {
+        border: 1px solid black;
+        flex-grow: 1;
+        align-self: stretch;
+        padding: 1em 1em 1em 3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Main map section -->
+    <section id="map">
+    </section>
+    <!-- Quick links to places and information -->
+    <aside id="places">
+      <!-- Search subsection -->
+      <section id="search">
+        <label for="search-input"><i class="fa fa-search"></i></label>
+        <input id="search-input" type="search" autcomplete="off" autocorrect="off" placeholder="Search">
+      </section>
+      <!-- Button subsection -->
+      <section id="place-buttons" class="accordion">
+        <section>
+        </section>
+      </section>
+    </aside>
+    <!-- Functionality -->
+    <script>
+      function fitToGroup(map, group) {
+        var bounds = new google.maps.LatLngBounds();
+        for (var j = 0; j < group.places.length; j++) {
+          var place = group.places[j];
+          bounds.extend({lat: place.lat, lng: place.lng});
+        }
+        map.fitBounds(bounds);
+      }
+
+      function fitToPlace(map, place) {
+        map.setCenter({lat: place.lat, lng: place.lng});
+      }
+
+      function initMap() {
+        // Place data
+        var placeGroups = [{
+          title: 'Uni Buildings',
+          places: [{
+            lat: 55.946036,
+            lng: -3.192112,
+            title: 'Forret Hill',
+            content: '<h3>Forret Hill</h3><p>This is Forrest Hill. You can find the ITO and IGS here.</p>',
+            subplaces: ['ITO', 'IGS']
+          }, {
+            lat: 55.944757,
+            lng: -3.187455,
+            title: 'Informatics Forum',
+            content: '<h3>Informatics Forum</h3><p>This is the Informatics Forum. You can find PhD offices here.</p>',
+            subplaces: ['PhD offices']
+          }]
+        }, {
+          title: 'Banks',
+          places: [{
+            lat: 55.946208,
+            lng: -3.184974,
+            title: 'RBS',
+            content: '<h3>RBS Nicolson Street</h3><p>This is the RBS branch on Nicolson Street</p>',
+            subplaces: []
+          }]
+        }];
+
+        // ---- Init map ----
+        var george_square = {lat: 55.943656, lng: -3.188721};
+        var map = new google.maps.Map(document.getElementById('map'));
+        var bounds = new google.maps.LatLngBounds();
+        for (var i = 0; i < placeGroups.length; i++) {
+          var group = placeGroups[i];
+          for (var j = 0; j < group.places.length; j++) {
+            var place = group.places[j];
+            bounds.extend({lat: place.lat, lng: place.lng});
+          }
+        }
+        map.fitBounds(bounds);
+
+        // ---- Populate markers ----
+        // Place groups
+        for (var i = 0; i < placeGroups.length; i++) {
+          var group = placeGroups[i];
+
+          // Places
+          for (var j = 0; j < group.places.length; j++) {
+            var place = group.places[j];
+            var marker = new google.maps.Marker({
+              position: {lat: place.lat, lng: place.lng},
+              map: map,
+              title: place.title
+            });
+            var infoWindow = new google.maps.InfoWindow({
+              content: place.content
+            });
+            marker.addListener('click', function () {
+              infoWindow.open(map, marker);
+            });
+          }
+        }
+
+        // ---- Create accordion ----
+        // Place groups
+        for (var i = 0; i < placeGroups.length; i++) {
+          var group = placeGroups[i];
+          var buttonGroup = $('<section>')
+            .attr('group-idx', i);
+          var groupHeading = $('<h3>')
+            .text(group.title)
+            .click(function (evt) {
+              var groupIdx = $(this).parent().attr('group-idx');
+              fitToGroup(map, placeGroups[groupIdx])
+            })
+            .appendTo(buttonGroup);
+
+          // Places
+          for (var j = 0; j < group.places.length; j++) {
+            var place = group.places[j];
+            var button = $('<button>')
+              .addClass('place-button')
+              .attr('place-idx', j)
+              .click(function (evt) {
+                var groupIdx = $(this).parent().attr('group-idx');
+                var placeIdx = $(this).attr('place-idx');
+                fitToPlace(map, placeGroups[groupIdx].places[placeIdx]);
+              })
+              .appendTo(buttonGroup);
+            var buttonHeading = $('<h3>')
+              .text(place.title)
+              .appendTo(button);
+            var list = $('<ul>')
+              .appendTo(button);
+
+            // Subplaces
+            for (var k = 0; k < place.subplaces.length; k++) {
+              var subplace = place.subplaces[k];
+              var item = $('<li>')
+                .text(subplace)
+                .appendTo(list);
+            }
+          }
+          $('#place-buttons').append(buttonGroup);
+        }
+      }
+    </script>
+    <!-- Google Maps dependency -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt5ufFlKy1B2RZ627V1sb1-SrpE9THiag&callback=initMap"></script>
+  </body>
+</html>
