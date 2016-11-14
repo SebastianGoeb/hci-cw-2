@@ -95,6 +95,42 @@
     </aside>
     <!-- Functionality -->
     <script>
+      // Place data
+      var placeGroups = [{
+        title: 'Accommodation',
+        places: [{
+          lat: 55.940417,
+          lng: -3.171280,
+          title: 'Pollock Halls',
+          content: '<h3>Pollock Halls</h3><p>This is Pollock Halls. Freshers live here.</p>',
+          subplaces: []
+        }]
+      }, {
+        title: 'Uni Buildings',
+        places: [{
+          lat: 55.946036,
+          lng: -3.192112,
+          title: 'Forret Hill',
+          content: '<h3>Forret Hill</h3><p>This is Forrest Hill. You can find the ITO and IGS here.</p>',
+          subplaces: ['ITO', 'IGS']
+        }, {
+          lat: 55.944757,
+          lng: -3.187455,
+          title: 'Informatics Forum',
+          content: '<h3>Informatics Forum</h3><p>This is the Informatics Forum. You can find PhD offices here.</p>',
+          subplaces: ['PhD offices']
+        }]
+      }, {
+        title: 'Banks',
+        places: [{
+          lat: 55.946208,
+          lng: -3.184974,
+          title: 'RBS',
+          content: '<h3>RBS Nicolson Street</h3><p>This is the RBS branch on Nicolson Street</p>',
+          subplaces: []
+        }]
+      }];
+
       function fitToGroup(map, group) {
         var bounds = new google.maps.LatLngBounds();
         for (var j = 0; j < group.places.length; j++) {
@@ -116,44 +152,7 @@
       }
 
       function initMap() {
-        // Place data
-        var placeGroups = [{
-          title: 'Accommodation',
-          places: [{
-            lat: 55.940417,
-            lng: -3.171280,
-            title: 'Pollock Halls',
-            content: '<h3>Pollock Halls</h3><p>This is Pollock Halls. Freshers live here.</p>',
-            subplaces: []
-          }]
-        }, {
-          title: 'Uni Buildings',
-          places: [{
-            lat: 55.946036,
-            lng: -3.192112,
-            title: 'Forret Hill',
-            content: '<h3>Forret Hill</h3><p>This is Forrest Hill. You can find the ITO and IGS here.</p>',
-            subplaces: ['ITO', 'IGS']
-          }, {
-            lat: 55.944757,
-            lng: -3.187455,
-            title: 'Informatics Forum',
-            content: '<h3>Informatics Forum</h3><p>This is the Informatics Forum. You can find PhD offices here.</p>',
-            subplaces: ['PhD offices']
-          }]
-        }, {
-          title: 'Banks',
-          places: [{
-            lat: 55.946208,
-            lng: -3.184974,
-            title: 'RBS',
-            content: '<h3>RBS Nicolson Street</h3><p>This is the RBS branch on Nicolson Street</p>',
-            subplaces: []
-          }]
-        }];
-
         // ---- Init map ----
-        var george_square = {lat: 55.943656, lng: -3.188721};
         var map = new google.maps.Map(document.getElementById('map'));
         var bounds = new google.maps.LatLngBounds();
         for (var i = 0; i < placeGroups.length; i++) {
