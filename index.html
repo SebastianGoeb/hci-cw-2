@@ -99,8 +99,7 @@
       var placeGroups = [{
         title: 'Accommodation',
         places: [{
-          lat: 55.940417,
-          lng: -3.171280,
+          latLng: {lat: 55.940417, lng: -3.171280},
           title: 'Pollock Halls',
           content: '<h3>Pollock Halls</h3><p>This is Pollock Halls. Freshers live here.</p>',
           subplaces: []
@@ -108,14 +107,12 @@
       }, {
         title: 'Uni Buildings',
         places: [{
-          lat: 55.946036,
-          lng: -3.192112,
+          latLng: {lat: 55.946036, lng: -3.192112},
           title: 'Forret Hill',
           content: '<h3>Forret Hill</h3><p>This is Forrest Hill. You can find the ITO and IGS here.</p>',
           subplaces: ['ITO', 'IGS']
         }, {
-          lat: 55.944757,
-          lng: -3.187455,
+          latLng: {lat: 55.944757, lng: -3.187455},
           title: 'Informatics Forum',
           content: '<h3>Informatics Forum</h3><p>This is the Informatics Forum. You can find PhD offices here.</p>',
           subplaces: ['PhD offices']
@@ -123,8 +120,7 @@
       }, {
         title: 'Banks',
         places: [{
-          lat: 55.946208,
-          lng: -3.184974,
+          latLng: {lat: 55.946208, lng: -3.184974},
           title: 'RBS',
           content: '<h3>RBS Nicolson Street</h3><p>This is the RBS branch on Nicolson Street</p>',
           subplaces: []
@@ -135,13 +131,13 @@
         var bounds = new google.maps.LatLngBounds();
         for (var j = 0; j < group.places.length; j++) {
           var place = group.places[j];
-          bounds.extend({lat: place.lat, lng: place.lng});
+          bounds.extend(place.latLng);
         }
         map.fitBounds(bounds);
       }
 
       function fitToPlace(map, place) {
-        map.setCenter({lat: place.lat, lng: place.lng});
+        map.setCenter(place.latLng);
       }
 
       function openAccordion(header) {
@@ -159,7 +155,7 @@
           var group = placeGroups[i];
           for (var j = 0; j < group.places.length; j++) {
             var place = group.places[j];
-            bounds.extend({lat: place.lat, lng: place.lng});
+            bounds.extend(place.latLng);
           }
         }
         map.fitBounds(bounds);
@@ -178,7 +174,7 @@
           for (var j = 0; j < group.places.length; j++) {
             var place = group.places[j];
             markers[i].push(new google.maps.Marker({
-              position: {lat: place.lat, lng: place.lng},
+              position: place.latLng,
               map: map,
               title: place.title
             }));
