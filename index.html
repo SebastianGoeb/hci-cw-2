@@ -172,18 +172,20 @@
 
           // Places
           for (var j = 0; j < group.places.length; j++) {
-            var place = group.places[j];
-            var marker = new google.maps.Marker({
-              position: {lat: place.lat, lng: place.lng},
-              map: map,
-              title: place.title
-            });
-            var infoWindow = new google.maps.InfoWindow({
-              content: place.content
-            });
-            marker.addListener('click', function () {
-              infoWindow.open(map, marker);
-            });
+            (function (i, j) {
+              var place = group.places[j];
+              var marker = new google.maps.Marker({
+                position: {lat: place.lat, lng: place.lng},
+                map: map,
+                title: place.title
+              });
+              var infoWindow = new google.maps.InfoWindow({
+                content: place.content
+              });
+              marker.addListener('click', function () {
+                infoWindow.open(map, marker);
+              });
+            })(i, j);
           }
         }
 
