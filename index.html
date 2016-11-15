@@ -25,12 +25,11 @@
         flex-grow: 1;
       }
       #places {
-        flex-basis: 20em;
+        flex-basis: 30rem;
         order: 1;
-        padding: 1em;
-        box-shadow: -0px 0 20px #000
+        padding: 0 1.14285714286rem;
       }
-      #search {
+      #place-search {
         display: flex;
         align-items: baseline;
       }
@@ -80,12 +79,13 @@
     </section>
     <!-- Quick links to places and information -->
     <aside id="places">
-      <!-- Search subsection -->
-      <section id="search">
+      <h1>New Students</h1>
+      <!-- Search section -->
+      <section id="place-search">
         <label for="search-input"><i class="fa fa-search"></i></label>
         <input id="search-input" type="search" autcomplete="off" autocorrect="off" placeholder="Search">
       </section>
-      <!-- Button subsection -->
+      <!-- Button section -->
       <section id="place-buttons" class="accordion">
       </section>
     </aside>
@@ -247,7 +247,7 @@
                 fitToPlace(map, placeGroups[groupIdx].places[placeIdx]);
               })
               .appendTo(accordionSection);
-            var buttonHeading = $('<b>')
+            var buttonHeading = $('<h4>')
               .text(place.title)
               .appendTo(button);
             var list = $('<ul>')
