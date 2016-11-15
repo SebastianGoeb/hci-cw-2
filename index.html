@@ -214,7 +214,6 @@
 
           // Section content
           var section = $('<section>')
-            .attr('group-idx', i)
             .addClass('closed')
             .appendTo($('#place-buttons'));
 
@@ -244,9 +243,10 @@
             var place = group.places[j];
             var button = $('<button>')
               .addClass('place-button')
+              .attr('group-idx', i)
               .attr('place-idx', j)
               .click(function (evt) {
-                var groupIdx = $(this).parent().attr('group-idx');
+                var groupIdx = $(this).attr('group-idx');
                 var placeIdx = $(this).attr('place-idx');
                 fitToPlace(map, placeGroups[groupIdx].places[placeIdx]);
               })
