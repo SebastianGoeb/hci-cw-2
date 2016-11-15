@@ -2,31 +2,45 @@
 /* Reference point: 1rem = 14sp (Body1 style) */
 
 /* Base style */
-body, input, button, select, option, textarea {
+html, body, input, button, select, ospion, textarea {
     font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
     font-weight: 400;
+    font-size: 14px;
+    line-height: 1.42857142857rem; /* 20sp */
 }
 
-/* Heading */
+/* Display 1 */
 h1 {
-    font-size: 1.714rem;
     font-weight: 400;
+    font-size: 2.42857142857rem; /* 34sp */
+    line-height: 2.85714285714rem; /* 40sp */
+    margin: 1.42857142857rem 0; /* 40sp leading = (20px 0) */
 }
 
-/* Title */
+/* Headline */
 h2 {
-    font-size: 1.429rem;
-    font-weight: 500;
+    font-weight: 400;
+    font-size: 1.71428571429rem; /* 24sp */
+    line-height: 2.28571428571rem; /* 32sp */
+    margin: 0.78571428571rem 0; /* 32sp leading = (11px 0) */
 }
 
 /* Subheading */
-h1 > small, h2 > small {
-    font-size: 1.143rem;
+h3 {
     font-weight: 400;
+    font-size: 1.14285714286rem; /* 16sp */
+    line-height:  1.71428571429rem; /* 24sp */
+    margin: 0.21428571428rem 0; /* 24sp leading = (3px 0) */
 }
 
 /* Body 2 */
-b {
+h4 {
     font-weight: 500;
+    font-size: 1rem; /* 14sp */
+    line-height:  1.71428571429rem; /* 24sp */
+    margin: 0.14285714285rem 0; /* 24sp leading = (2px 0) */
+}
+
+button {
+    text-align: left;
 }
