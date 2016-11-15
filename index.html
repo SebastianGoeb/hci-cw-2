@@ -65,6 +65,9 @@
         align-self: stretch;
         padding: 1em 1em 1em 3rem;
       }
+      .hidden {
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -95,7 +98,7 @@
     <script>
       // Place data
       var placeGroups = [
-        accommodations, 
+        accommodations,
         {
         title: 'Uni Buildings',
         places: [{
@@ -161,6 +164,29 @@
       for (var i = 0; i < placeGroups.length; i++) {
         places = places.concat(placeGroups[i].places);
       }
+
+      // ---- Search functionality ----
+      $('#search-input')
+        .on('change keyup paste', function () {
+          updateSearch();
+        });
+
+        function updateSearch() {
+          var string = $("#search-input").val().toLowerCase();
+          $('#place-buttons button').each(function () {
+            var groupIdx = $(this).attr('group-idx');
+            var placeIdx = $(this).attr('place-idx');
+            var place = placeGroups[groupIdx].places[placeIdx];
+            if (string === '' ||
+                place.title.toLowerCase().indexOf(string) != -1 ||
+                place.content.toLowerCase().indexOf(string) != -1 ||
+                place.subplaces.join('').toLowerCase().indexOf(string) != -1) {
+              $(this).removeClass('hidden');
+            } else {
+              $(this).addClass('hidden');
+            }
+          });
+        }
 
       // ---- Util functions ----
       function fitToPlaces(map, places) {
