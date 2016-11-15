@@ -162,14 +162,19 @@
             subplaces: ['international account']
         }
         ]
-            
       }];
 
-      function fitToGroup(map, group) {
+      // ---- Flatten Places ----
+      var places = [];
+      for (var i = 0; i < placeGroups.length; i++) {
+        places = places.concat(placeGroups[i].places);
+      }
+
+      // ---- Util functions ----
+      function fitToPlaces(map, places) {
         var bounds = new google.maps.LatLngBounds();
-        for (var j = 0; j < group.places.length; j++) {
-          var place = group.places[j];
-          bounds.extend(place.latLng);
+        for (var i = 0; i < places.length; i++) {
+          bounds.extend(places[i].latLng);
         }
         map.fitBounds(bounds);
       }
@@ -186,54 +191,34 @@
       }
 
       function initMap() {
-        // ---- Init map ----
+        // ---- Create map ----
         var map = new google.maps.Map(document.getElementById('map'));
-        var bounds = new google.maps.LatLngBounds();
-        for (var i = 0; i < placeGroups.length; i++) {
-          var group = placeGroups[i];
-          for (var j = 0; j < group.places.length; j++) {
-            var place = group.places[j];
-            bounds.extend(place.latLng);
-          }
-        }
-        map.fitBounds(bounds);
+        window.map = map;
+
+        // ---- Zoom and pan map ----
+        var bounds = fitToPlaces(map, places);
 
         // ---- Populate markers ----
-        var infoWindows = [];
-        var markers = [];
-
-        // Place groups
-        for (var i = 0; i < placeGroups.length; i++) {
-          var group = placeGroups[i];
-          infoWindows.push([]);
-          markers.push([]);
-
-          // Places
-          for (var j = 0; j < group.places.length; j++) {
-            var place = group.places[j];
-            markers[i].push(new google.maps.Marker({
+        for (var i = 0; i < places.length; i++) {
+          (function (place) {
+            place.marker = new google.maps.Marker({
               position: place.latLng,
               map: map,
               title: place.title
-            }));
-            infoWindows[i].push(new google.maps.InfoWindow({
+            });
+            place.infoWindow = new google.maps.InfoWindow({
               content: place.content
-            }));
-            (function (i, j) {
-              markers[i][j].addListener('click', function () {
-                for (var a = 0; a < infoWindows.length; a++) {
-                  for (var b = 0; b < infoWindows[a].length; b++) {
-                    infoWindows[a][b].close();
-                  }
-                }
-                infoWindows[i][j].open(map, markers[i][j]);
-              });
-            })(i, j);
-          }
+            });
+            place.marker.addListener('click', function () {
+              for (var j = 0; j < places.length; j++) {
+                places[j].infoWindow.close();
+              }
+              place.infoWindow.open(map, place.marker);
+            });
+          })(places[i]);
         }
 
         // ---- Create accordion ----
-        // Place groups
         for (var i = 0; i < placeGroups.length; i++) {
           var group = placeGroups[i];
           // Section header
@@ -280,7 +265,7 @@
                 .appendTo(list);
             }
           }
-        } // outer for loop
+        }
         openAccordion($('#place-buttons').children().first())
       }
     </script>
