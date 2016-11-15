@@ -1,29 +1,25 @@
 <html>
   <head>
+    <title>New Students</title>
     <!-- Fix scaling for mobile users (good practice) -->
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+    <!-- EXTERNAL DEPENDENCIES -->
     <!-- Roboto (the Android font) because it's pretty -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500">
     <!-- Font Awesome for pretty icons -->
     <script src="https://use.fontawesome.com/dd225ee618.js"></script>
-    <!-- jQuery because I'm too lazy to write native dom code -->
+    <!-- jQuery because it's easier to work with than native dom code -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+    <!-- PROJECT DEPENDENCIES -->
+    <link href="typography.css" rel="stylesheet">
     <!-- Custom CSS -->
     <style>
+      /* Layout */
       body {
         display: flex;
         margin: 0;
-        font-family: 'Roboto', sans-serif;
-        font-size: 1rem;
-        font-weight: 400;
-      }
-      h1 {
-        font-size: 1.71rem;
-        font-weight: 400;
-      }
-      h2 {
-        font-size: 1.43rem;
-        font-weight: 500;
       }
       #map {
         flex-grow: 1;
@@ -250,8 +246,8 @@
                 var placeIdx = $(this).attr('place-idx');
                 fitToPlace(map, placeGroups[groupIdx].places[placeIdx]);
               })
-              .appendTo(accordionSection);
-            var buttonHeading = $('<h3>')
+              .appendTo(buttonGroup);
+            var buttonHeading = $('<b>')
               .text(place.title)
               .appendTo(button);
             var list = $('<ul>')
