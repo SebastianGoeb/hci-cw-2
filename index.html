@@ -180,6 +180,13 @@
         $(section).toggleClass('closed');
       }
 
+      function openInfoWindow(map, place) {
+        for (var j = 0; j < places.length; j++) {
+          places[j].infoWindow.close();
+        }
+        place.infoWindow.open(map, place.marker);
+      }
+
       function initMap() {
         // ---- Create map ----
         var map = new google.maps.Map(document.getElementById('map'));
@@ -200,10 +207,7 @@
               content: place.content
             });
             place.marker.addListener('click', function () {
-              for (var j = 0; j < places.length; j++) {
-                places[j].infoWindow.close();
-              }
-              place.infoWindow.open(map, place.marker);
+              openInfoWindow(map, place);
             });
           })(places[i]);
         }
@@ -249,6 +253,7 @@
                 var groupIdx = $(this).attr('group-idx');
                 var placeIdx = $(this).attr('place-idx');
                 fitToPlace(map, placeGroups[groupIdx].places[placeIdx]);
+                openInfoWindow(map, placeGroups[groupIdx].places[placeIdx]);
               })
               .appendTo(content);
             $('<h4>')
