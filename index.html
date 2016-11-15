@@ -95,24 +95,13 @@
     </aside>
     <!-- Functionality -->
     <script src=accommodation.js></script>
+    <script src=buildings.js></script>
     <script>
       // Place data
       var placeGroups = [
         accommodations,
+        uni_buildings, 
         {
-        title: 'Uni Buildings',
-        places: [{
-          latLng: {lat: 55.946036, lng: -3.192112},
-          title: 'Forret Hill',
-          content: '<h3>Forret Hill</h3><p>This is Forrest Hill. You can find the ITO and IGS here.</p>',
-          subplaces: ['ITO', 'IGS']
-        }, {
-          latLng: {lat: 55.944757, lng: -3.187455},
-          title: 'Informatics Forum',
-          content: '<h3>Informatics Forum</h3><p>This is the Informatics Forum. You can find PhD offices here.</p>',
-          subplaces: ['PhD offices']
-        }]
-      }, {
         title: 'Banks',
         places: [{
           latLng: {lat: 55.946208, lng: -3.184974},
