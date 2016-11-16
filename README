@@ -1,9 +1,33 @@
 # Human Computer Interaction - Coursework 2
 
-## Design Decisions
+## Dependency Decisions
 
 * Roboto
+    * It's a good, well-recognized font.
 * Font Awesome
+    * Font Awesome has many well recognized icons such as search and chevrons
 * jQuery
+    * Convenience mostly, not for design
 * Google Maps (as opposed to another map api)
-* Header typography
+    * Google Maps is well-recognized and easy to work with
+* Typography
+    * Following Google's material design styles for size, leading, etc.
+
+## Design Decisions
+
+* Page Layout
+    * Map as big as possible for ease of use
+    * Side panel is similar to original Google Maps side panel
+    * Shortcut buttons look very distinctive, very obvious they are buttons
+    * Content is grouped for ease of use
+* Search Bar
+    * Material design "floating paper" is very common in Google ecosystem, again well-recognized
+    * Magnifying glass is standard search symbol
+* Sections
+    * Collapsible/expandable to make layout a bit cleaner
+    * Chevrons are standard symbol
+    * Very similar to Wikipedia sections on mobile, again well-recognized
+* Buttons
+    * Credit to http://tympanus.net/Development/CreativeButtons/
+    * Original was red, restyled to green here because of positive connotations
+    * Makes it very obvious they are action buttons
