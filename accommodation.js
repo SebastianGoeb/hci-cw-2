@@ -1,6 +1,7 @@
 
 var accommodations = {
     title: 'Accommodation',
+    content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
     places: [{
       latLng: {lat: 55.946974, lng: -3.186188},
       title: 'Nicolson St and South College Street',
@@ -16,122 +17,122 @@ var accommodations = {
       latLng: {lat: 55.947301, lng: -3.181218},
       title: 'New Arthur Place',
       content: '<h3>Nicolson St and South College Street</h3><p>This is Pollock Halls. Freshers live here.</p>',
-      subplaces: [] 
+      subplaces: []
     } , {
       latLng: {lat: 55.942407, lng:  -3.178059},
       title: 'Hermit\'s Croft',
       content: '<h3>Nicolson St and South College Street</h3><p>This is Pollock Halls. Freshers live here.</p>',
-      subplaces: [] 
+      subplaces: []
     } , {
       latLng: {lat: 55.948784, lng: -3.185811},
       title: 'Robertson\'s Close',
       content: '<h3>Nicolson St and South College Street</h3><p>This is Pollock Halls. Freshers live here.</p>',
-      subplaces: [] 
+      subplaces: []
     }, {
       latLng: {lat: 55.938762, lng: -3.182415},
       title: 'Sciennes',
       content: '<h3>Nicolson St and South College Street</h3><p>This is Pollock Halls. Freshers live here.</p>',
-      subplaces: [] 
+      subplaces: []
     }, {
       latLng: {lat: 55.938731, lng:  -3.177211},
       title: 'East Newington Place',
       content: '<h3>Nicolson St and South College Street</h3><p>This is Pollock Halls. Freshers live here.</p>',
-      subplaces: [] 
+      subplaces: []
     }, {
       latLng: {lat: 55.948499, lng:  -3.188380},
       title: 'College Wynd',
       content: '<h3>Nicolson St and South College Street</h3><p>This is Pollock Halls. Freshers live here.</p>',
-      subplaces: [] 
+      subplaces: []
     }, {
       latLng: {lat: 55.939341, lng: -3.182945},
       title: 'Meadow Court',
       content: '<h3>Nicolson St and South College Street</h3><p>This is Pollock Halls. Freshers live here.</p>',
-      subplaces: [] 
+      subplaces: []
     }, {
       latLng: {lat: 55.940100, lng: -3.180662},
       title: 'South Clerk Street',
       content: '<h3>Nicolson St and South College Street</h3><p>This is Pollock Halls. Freshers live here.</p>',
-      subplaces: [] 
+      subplaces: []
     }, {
       latLng: {lat: 55.937349, lng: -3.170381},
       title: 'Fraser Court',
       content: '<h3>Nicolson St and South College Street</h3><p>This is Pollock Halls. Freshers live here.</p>',
-      subplaces: [] 
+      subplaces: []
     }, {
       latLng: {lat: 55.948399, lng: -3.189370},
       title: 'Kincaid\'s Court',
       content: '<h3>Nicolson St and South College Street</h3><p>This is Pollock Halls. Freshers live here.</p>',
-      subplaces: [] 
+      subplaces: []
     }, {
       latLng: {lat: 55.938604, lng: -3.202470},
       title: ' Warrender Park Crescent',
       content: '<h3>Nicolson St and South College Street</h3><p>This is Pollock Halls. Freshers live here.</p>',
-      subplaces: [] 
+      subplaces: []
     }, {
       latLng: {lat: 55.943206, lng: -3.207800},
       title: 'Mansion Fountainbridge',
       content: '<h3>Nicolson St and South College Street</h3><p>This is Pollock Halls. Freshers live here.</p>',
-      subplaces: [] 
+      subplaces: []
     }, {
       latLng: {lat: 55.948576, lng: -3.181289},
       title: 'Darroch Court',
       content: '<h3>Nicolson St and South College Street</h3><p>This is Pollock Halls. Freshers live here.</p>',
-      subplaces: [] 
+      subplaces: []
     }, {
       latLng: {lat: 55.949250, lng: -3.185985},
       title: 'Blackfriars Street',
       content: '<h3>Nicolson St and South College Street</h3><p>This is Pollock Halls. Freshers live here.</p>',
-      subplaces: [] 
+      subplaces: []
     }, {
       latLng: {lat: 55.940074, lng: -3.171136},
       title: 'Pollock Halls',
       content: '<h3>Nicolson St and South College Street</h3><p>This is Pollock Halls. Freshers live here.</p>',
-      subplaces: ['John Burnett House', 'Chancellor\'s Court', 'Lee House', 'Grant House', ' Baird House', 'Ewing House', 'Turner House', 'Holland House' ] 
+      subplaces: ['John Burnett House', 'Chancellor\'s Court', 'Lee House', 'Grant House', ' Baird House', 'Ewing House', 'Turner House', 'Holland House' ]
     }, {
       latLng: {lat: 55.944992, lng:  -3.203468},
       title: 'Riego Street',
       content: '<h3>Nicolson St and South College Street</h3><p>This is Pollock Halls. Freshers live here.</p>',
-      subplaces: [] 
+      subplaces: []
     }, {
       latLng: {lat: 55.955719, lng: -3.171102},
       title: 'Abbeyhill',
       content: '<h3>Nicolson St and South College Street</h3><p>This is Pollock Halls. Freshers live here.</p>',
-      subplaces: [] 
+      subplaces: []
     }, {
       latLng: {lat: 55.962955, lng: -3.179591},
       title: 'Shrubhill',
       content: '<h3>Nicolson St and South College Street</h3><p>This is Pollock Halls. Freshers live here.</p>',
-      subplaces: [] 
+      subplaces: []
     }, {
       latLng: {lat: 55.962109, lng:  -3.177880},
       title: 'Murano',
       content: '<h3>Nicolson St and South College Street</h3><p>This is Pollock Halls. Freshers live here.</p>',
-      subplaces: [] 
+      subplaces: []
     }, {
       latLng: {lat: 55.950373, lng: -3.178781},
       title: 'Sugarhouse Close',
       content: '<h3>Nicolson St and South College Street</h3><p>This is Pollock Halls. Freshers live here.</p>',
-      subplaces: [] 
+      subplaces: []
     }, {
       latLng: {lat: 55.945506, lng:  -3.200458},
       title: 'Portsburgh Court',
       content: '<h3>Nicolson St and South College Street</h3><p>This is Pollock Halls. Freshers live here.</p>',
-      subplaces: [] 
+      subplaces: []
     }, {
       latLng: {lat: 55.945566, lng:  -3.181261},
       title: 'Deaconess',
       content: '<h3>Nicolson St and South College Street</h3><p>This is Pollock Halls. Freshers live here.</p>',
-      subplaces: [] 
+      subplaces: []
     }, {
       latLng: {lat: 55.955719, lng: -3.171102},
       title: 'Abbeyhill',
       content: '<h3>Nicolson St and South College Street</h3><p>This is Pollock Halls. Freshers live here.</p>',
-      subplaces: [] 
+      subplaces: []
     }, {
       latLng: {lat: 55.962955, lng: -3.179591},
       title: 'Shrubhill',
       content: '<h3>Nicolson St and South College Street</h3><p>This is Pollock Halls. Freshers live here.</p>',
-      subplaces: [] 
+      subplaces: []
     }
 
 

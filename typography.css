@@ -5,6 +5,7 @@
 html, body, input, button, select, ospion, textarea {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
+    font-size: 1rem;
     line-height: 1.42857142857rem; /* 20sp */
 }
 
@@ -38,6 +39,14 @@ h4 {
     font-size: 1rem; /* 14sp */
     line-height:  1.71428571429rem; /* 24sp */
     margin: 0.14285714285rem 0; /* 24sp leading = (2px 0) */
+}
+
+/* Caption */
+button li {
+    font-weight: 400;
+    font-size: 0.85714285714rem; /* 12sp */
+    line-height:  1.14285714286rem; /* 16sp */
+    margin: 0.14285714285rem 0; /* 16sp leading = (2px 0) */
 }
 
 button {
