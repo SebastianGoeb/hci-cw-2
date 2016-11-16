@@ -13,7 +13,7 @@ var banks = {
     }, {
         latLng: {lat: 55.949021, lng: -3.192829},
         title: 'Bank of Scotland',
-        content: '<h3>Bank of Scotland<h3><p>Bank of Scotland offers a <a href="https://www.bankofscotland.co.uk/bankaccounts/compare-current-accounts/student-account/">student accoutn</a> that is available to any student who has had a permanent UK address for the past 3 years.',
+        content: '<h3>Bank of Scotland</h3><p>Bank of Scotland offers a <a href="https://www.bankofscotland.co.uk/bankaccounts/compare-current-accounts/student-account/">student account</a> that is available to any student who has had a permanent UK address for the past 3 years.',
         subplaces: []
     },
     {
