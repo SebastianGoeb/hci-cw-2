@@ -47,7 +47,6 @@
       }
       #place-buttons button {
         width: 100%;
-        position: relative;
         color: #fff;
         background-color: #4f9a6b;
         box-shadow: 0 6px #346546;
@@ -59,20 +58,12 @@
         border-radius: 5px;
       }
       #place-buttons button:hover {
-        top: 2px;
+        transform: translateY(2px);
         box-shadow: 0 4px #346546;
       }
       #place-buttons button:active {
-        top: 6px;
+        transform: translateY(6px);
         box-shadow: 0 0 #346546;
-      }
-      #place-buttons button::after {
-        content: '';
-        position: absolute;
-        z-index: -1;
-        -webkit-transition: all 0.3s;
-        -moz-transition: all 0.3s;
-        transition: all 0.3s;
       }
       button ul {
         margin: 0;
@@ -182,7 +173,6 @@
       }
 
       function openAccordion(section) {
-        // $(section).siblings().addClass('closed');
         $(section).toggleClass('closed');
       }
 
@@ -282,7 +272,6 @@
             }
           }
         }
-        // openAccordion($('#place-buttons').children().first())
       }
     </script>
     <!-- Google Maps dependency -->
