@@ -6,7 +6,7 @@
 
 /* Sections */
 .accordion section {
-    margin: 0.5rem 0;
+    margin: 0.5rem 1rem;
 }
 
 /* Section headings */
@@ -16,22 +16,17 @@
     align-items: baseline;
 }
 .accordion hgroup .fa {
-    padding: 1em;
+    padding: 1rem;
+    margin-left: -1rem;
+    transform: scale(1.2) translateY(-0.1rem);
 }
 .accordion .closed hgroup .fa {
-    transform: rotate(-90deg);
-}
-
-/* Section content wrapper */
-.accordion .content-wrapper {
-    margin: 0 1rem;
-}
-.accordion .closed .content-wrapper {
-    display: none;
+    transform: scale(1.2) translateY(-0.1rem) rotate(-90deg);
 }
 
 /* Section content */
 .accordion .content {
-    padding-top: 1rem;
-    /*margin: 0 1rem;*/
+}
+.accordion .closed .content {
+    display: none;
 }

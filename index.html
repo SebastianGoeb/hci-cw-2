@@ -43,7 +43,11 @@
         display: flex;
         align-items: baseline;
       }
-      #place-buttons .content {
+      #place-buttons hgroup {
+        border-bottom: 1px solid #ddd;
+      }
+      #place-buttons section h3 {
+        color: rgba(0,0,0,0.54)
       }
       #place-buttons button {
         width: 100%;
@@ -54,8 +58,9 @@
         border: none;
         outline: 0;
         cursor: pointer;
-        padding: 1rem;
+        padding: 0rem 1.5rem 1rem;
         border-radius: 5px;
+        text-align: left;
       }
       #place-buttons button:hover {
         transform: translateY(2px);
@@ -226,22 +231,19 @@
           $('<i>')
             .addClass('fa fa-chevron-down')
             .appendTo(heading);
-          $('<h3>')
+          $('<h2>')
             .text(group.title)
             .appendTo(heading);
 
           // Section content
-          var contentWrapper = $('<div>')
-            .addClass('content-wrapper')
-            .appendTo(section);
-          if (group.content) {
-            var paragraph = $('<div>')
-              .html(group.content)
-              .appendTo(contentWrapper);
-          }
           var content = $('<div>')
             .addClass('content')
-            .appendTo(contentWrapper);
+            .appendTo(section);
+          if (group.content) {
+            var paragraph = $('<p>')
+              .html(group.content)
+              .appendTo(content);
+          }
 
           // Places
           for (var j = 0; j < group.places.length; j++) {
