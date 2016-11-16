@@ -13,7 +13,8 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 
     <!-- PROJECT DEPENDENCIES -->
-    <link href="accordion.css" rel="stylesheet">
+    <!-- <link href="accordion.css" rel="stylesheet"> -->
+    <link href="collapsible.css" rel="stylesheet">
     <link href="typography.css" rel="stylesheet">
     <!-- Custom CSS -->
     <style>
@@ -46,9 +47,10 @@
         flex-wrap: wrap;
         align-items: flex-start;
         align-content: flex-start;
+        justify-content: space-between;
       }
       #place-buttons button {
-        flex-basis: 50%;
+        flex-basis: 45%;
         min-height: 7rem;
       }
       label[for="search-input"] {
@@ -63,7 +65,17 @@
         box-shadow: 1px 2px 7px -1px #555;
         flex-grow: 1;
         align-self: stretch;
+        font-size: 1rem;
         padding: 1em 1em 1em 3rem;
+      }
+      button {
+        background-color: #c8f3af;
+        box-shadow: 0px 0px 0px 2px white, 0px 0px 0px 10px #c8f3af;
+        border: none;
+        margin: 1rem 0.25rem;
+      }
+      button ul {
+
       }
       .hidden {
         display: none;
@@ -76,7 +88,8 @@
     </section>
     <!-- Quick links to places and information -->
     <aside id="places">
-      <h1>New Students</h1>
+      <!-- <h1>New Students</h1> -->
+      <br>
       <!-- Search section -->
       <section id="place-search">
         <label for="search-input"><i class="fa fa-search"></i></label>
@@ -84,13 +97,6 @@
       </section>
       <!-- Button section -->
       <section id="place-buttons" class="accordion">
-      </section>
-      <!-- Info section -->
-      <section id="place-info">
-        <h2>Accomodation</h2>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
       </section>
     </aside>
     <!-- Functionality -->
@@ -117,22 +123,25 @@
           updateSearch();
         });
 
-        function updateSearch() {
-          var string = $("#search-input").val().toLowerCase();
-          $('#place-buttons button').each(function () {
-            var groupIdx = $(this).attr('group-idx');
-            var placeIdx = $(this).attr('place-idx');
-            var place = placeGroups[groupIdx].places[placeIdx];
-            if (string === '' ||
-                place.title.toLowerCase().indexOf(string) != -1 ||
-                place.content.toLowerCase().indexOf(string) != -1 ||
-                place.subplaces.join('').toLowerCase().indexOf(string) != -1) {
-              $(this).removeClass('hidden');
-            } else {
-              $(this).addClass('hidden');
-            }
-          });
+      function updateSearch() {
+        var string = $("#search-input").val().toLowerCase();
+
+        if (string !== '') {
+          $('#place-buttons section').removeClass('closed');
         }
+        $('#place-buttons button').each(function () {
+          var groupIdx = $(this).attr('group-idx');
+          var placeIdx = $(this).attr('place-idx');
+          var place = placeGroups[groupIdx].places[placeIdx];
+          if (string === '' ||
+              place.title.toLowerCase().indexOf(string) != -1 ||
+              place.subplaces.join('').toLowerCase().indexOf(string) != -1) {
+            $(this).removeClass('hidden');
+          } else {
+            $(this).addClass('hidden');
+          }
+        });
+      }
 
       // ---- Util functions ----
       function fitToPlaces(map, places) {
@@ -145,10 +154,11 @@
 
       function fitToPlace(map, place) {
         map.setCenter(place.latLng);
+        map.setZoom(16);
       }
 
       function openAccordion(section) {
-        $(section).siblings().addClass('closed');
+        // $(section).siblings().addClass('closed');
         $(section).toggleClass('closed');
       }
 
@@ -210,6 +220,11 @@
           var contentWrapper = $('<div>')
             .addClass('content-wrapper')
             .appendTo(section);
+          if (group.content) {
+            var paragraph = $('<p>')
+              .text(group.content)
+              .appendTo(contentWrapper);
+          }
           var content = $('<div>')
             .addClass('content')
             .appendTo(contentWrapper);
@@ -243,7 +258,7 @@
             }
           }
         }
-        openAccordion($('#place-buttons').children().first())
+        // openAccordion($('#place-buttons').children().first())
       }
     </script>
     <!-- Google Maps dependency -->

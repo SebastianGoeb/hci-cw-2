@@ -6,8 +6,6 @@
 
 /* Sections */
 .accordion section {
-    border: 1px solid rgba(0,0,0,0.15);
-    box-shadow: 1px 2px 7px -1px #555;
     margin: 0.5rem 0;
 }
 
@@ -18,7 +16,6 @@
     align-items: baseline;
 }
 .accordion hgroup .fa {
-    /*transition: all 300ms ease-out;*/
     padding: 1em;
 }
 .accordion .closed hgroup .fa {
@@ -27,17 +24,14 @@
 
 /* Section content wrapper */
 .accordion .content-wrapper {
-    /*transition: all 300ms ease-out;*/
-    height: 500px;
-    overflow: hidden;
+    margin: 0 1rem;
 }
 .accordion .closed .content-wrapper {
-    height: 0;
+    display: none;
 }
 
 /* Section content */
 .accordion .content {
-    border-top: 1px solid rgba(0,0,0,0.15);
     padding-top: 1rem;
-    margin: 0 1rem;
+    /*margin: 0 1rem;*/
 }
