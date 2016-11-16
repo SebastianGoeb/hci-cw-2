@@ -1,7 +1,7 @@
 
 var uni_buildings = {
         title: 'Uni Buildings',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum laoreet dignissim. Nunc fringilla ornare tristique. Nulla luctus ex erat, ut aliquet tortor consectetur nec. Phasellus et nisl et eros ultricies facilisis ut ut diam. Etiam facilisis id leo ut cursus. Pellentesque commodo tincidunt enim, id aliquam risus porttitor tempor. Donec urna est, venenatis auctor molestie vel, dictum ac orci. Curabitur sollicitudin ultricies tortor. Phasellus sit amet finibus erat. Donec mattis, leo non aliquet euismod, ex felis dapibus dui, vitae feugiat magna lorem ut tellus. Ut vitae elementum enim, quis vestibulum ante. Sed vitae quam semper nisl scelerisque dapibus. Vivamus pulvinar, nibh ut consequat dictum, massa risus auctor libero, ut sagittis velit eros et sapien. Nam vel ex a turpis sollicitudin porttitor. Nunc nec placerat dui.',
+        content: 'This is an abbreviated list of some of the more commonly used buildings in the university, focusing on the central campus - which has more relevance to informatics students. The Informatics Forum is not used for lectures or study, containing the offices of researchers and PhD students. This list marks the locations of common lecture venues, though there are many more and it is contingent on course organisers to find one, which may not be on this list. Typically, students study in Forrest Hill in undergraduate, with space becoming available in Appleton Tower as renovations progress.',
         places: [{
           latLng: {lat: 55.946036, lng: -3.192112},
           title: 'Forrest Hill',
