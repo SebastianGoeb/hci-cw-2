@@ -1,7 +1,7 @@
 
 var accommodations = {
     title: 'Accommodation',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum laoreet dignissim. Nunc fringilla ornare tristique. Nulla luctus ex erat, ut aliquet tortor consectetur nec. Phasellus et nisl et eros ultricies facilisis ut ut diam. Etiam facilisis id leo ut cursus. Pellentesque commodo tincidunt enim, id aliquam risus porttitor tempor. Donec urna est, venenatis auctor molestie vel, dictum ac orci. Curabitur sollicitudin ultricies tortor. Phasellus sit amet finibus erat. Donec mattis, leo non aliquet euismod, ex felis dapibus dui, vitae feugiat magna lorem ut tellus. Ut vitae elementum enim, quis vestibulum ante. Sed vitae quam semper nisl scelerisque dapibus. Vivamus pulvinar, nibh ut consequat dictum, massa risus auctor libero, ut sagittis velit eros et sapien. Nam vel ex a turpis sollicitudin porttitor. Nunc nec placerat dui.',
+    content: '<a href= "www.facebook.com> lol </a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum laoreet dignissim. Nunc fringilla ornare tristique. Nulla luctus ex erat, ut aliquet tortor consectetur nec. Phasellus et nisl et eros ultricies facilisis ut ut diam. Etiam facilisis id leo ut cursus. Pellentesque commodo tincidunt enim, id aliquam risus porttitor tempor. Donec urna est, venenatis auctor molestie vel, dictum ac orci. Curabitur sollicitudin ultricies tortor. Phasellus sit amet finibus erat. Donec mattis, leo non aliquet euismod, ex felis dapibus dui, vitae feugiat magna lorem ut tellus. Ut vitae elementum enim, quis vestibulum ante. Sed vitae quam semper nisl scelerisque dapibus. Vivamus pulvinar, nibh ut consequat dictum, massa risus auctor libero, ut sagittis velit eros et sapien. Nam vel ex a turpis sollicitudin porttitor. Nunc nec placerat dui.',
     places: [{
       latLng: {lat: 55.946974, lng: -3.186188},
       title: 'Nicolson St and South College Street',
@@ -179,22 +179,90 @@ var accommodations = {
       content: "Self-catered property with 280 single bedrooms. <br> Flats vary from 3-6 bedrooms in size. <br>\
       For more information click <a href='http://www.accom.ed.ac.uk/property-details/46/deaconess-142-146-pleasance-edinburgh/?back=/for-students/search-for-accommodation/search-results/?StudentType=2||Catering=Any||RoomType=Any||pageSize=1000'>here.</a>",
       subplaces: ['Undergraduate', 'Self-catered', 'Shared Kitchen Facilities', 'En-Suite Bathroom', 'Common Room']
+    }, 
+
+
+
+    // PG
+     {
+      latLng: {lat: 55.950373, lng: -3.178781},
+      title: 'David Horn',
+      content: "Self-catered property with 30 single and 9 twinned study bedrooms. <br> \
+      For more information click <a href='http://www.accom.ed.ac.uk/property-details/13/david-horn--40-64-craigmillar-park-edinburgh/?back=/for-students/search-for-accommodation/search-results/?StudentType=1||Catering=Any||RoomType=Any'>here.</a>",
+      subplaces: ['Postgraduate', 'Self-catered', 'Shared Kitchen Facilities', 'Shared Bathroom']
     }, {
-      latLng: {lat: 55.955719, lng: -3.171102},
-      title: 'Abbeyhill',
-      content: "Self-catered property with 114 single bedrooms. <br> Flats vary from 4-5 bedrooms in size. <br>\
-      For more information click <a href='http://www.accom.ed.ac.uk/property-details/40/new-arthur-place-new-arthur-place-edinburgh/?back=/for-students/search-for-accommodation/search-results/?StudentType=2||Catering=Any||RoomType=Any||pageSize=1000'>here.</a>",
-      subplaces: ['Undergraduate', 'Self-catered', 'Shared Kitchen Facilities', 'Shared Bathroom']
+      latLng: {lat: 55.950373, lng: -3.178781},
+      title: 'Kitchener House',
+      content: "Self-catered property with 47 single and 6 twinned study bedrooms. <br> \
+      For more information click <a href='http://www.accom.ed.ac.uk/property-details/35/kitchener-house-6-gordon-terrace-edinburgh/?back=/for-students/search-for-accommodation/search-results/?StudentType=1||Catering=Any||RoomType=Any'>here.</a>",
+      subplaces: ['Postgraduate', 'Self-catered', 'Shared Kitchen Facilities', 'Shared Bathroom', 'Common Room']
     }, {
-      latLng: {lat: 55.962955, lng: -3.179591},
-      title: 'Shrubhill',
-      content: "Self-catered property with 114 single bedrooms. <br> Flats vary from 4-5 bedrooms in size. <br>\
-      For more information click <a href='http://www.accom.ed.ac.uk/property-details/40/new-arthur-place-new-arthur-place-edinburgh/?back=/for-students/search-for-accommodation/search-results/?StudentType=2||Catering=Any||RoomType=Any||pageSize=1000'>here.</a>",
-      subplaces: ['Undergraduate', 'Self-catered', 'Shared Kitchen Facilities', 'Shared Bathroom']
-    }
-
-
-
+      latLng: {lat: 55.950373, lng: -3.178781},
+      title: 'Holyrood North - Residence Hall',
+      content: "Self-catered property with 469 single and 7 twinned study bedrooms. <br> \
+      For more information click <a href='http://www.accom.ed.ac.uk/property-details/56/holyrood-north---residence-hall-9d-holyrood-road-edinburgh/?back=/for-students/search-for-accommodation/search-results/?StudentType=1||Catering=Any||RoomType=Any'>here.</a>",
+      subplaces: ['Postgraduate', 'Self-catered', 'Shared Kitchen Facilities', 'En-Suite Bathroom']
+    }, {
+      latLng: {lat: 55.950373, lng: -3.178781},
+      title: 'Mylnes Court',
+      content: "Self-catered property with 176 single. <br> \
+      For more information click <a href='http://www.accom.ed.ac.uk/property-details/18/mylnes-court-lawnmarket-royal-mile-edinburgh/?back=/for-students/search-for-accommodation/search-results/?StudentType=1||Catering=Any||RoomType=Any'>here.</a>",
+      subplaces: ['Postgraduate', 'Self-catered', 'Shared Kitchen Facilities', 'Shared Bathroom']
+    }, {
+      latLng: {lat: 55.950373, lng: -3.178781},
+      title: 'West Mains Road',
+      content: "Self-catered property with 123 single study bedrooms. Flat typically have 10 bedrooms. <br> \
+      For more information click <a href='http://www.accom.ed.ac.uk/property-details/8/west-mains-road-west-mains-road-edinburgh/?back=/for-students/search-for-accommodation/search-results/?StudentType=1||Catering=Any||RoomType=Any'>here.</a>",
+      subplaces: ['Postgraduate', 'Self-catered', 'Shared Kitchen Facilities', 'Shared Bathroom']
+    }, {
+      latLng: {lat: 55.950373, lng: -3.178781},
+      title: 'Holland Annexe',
+      content: "Self-catered property with 20 single study bedrooms. <br> \
+      For more information click <a href='http://www.accom.ed.ac.uk/property-details/20/holland-annexe-pollock-halls-of-residence-edinburgh/?back=/for-students/search-for-accommodation/search-results/?StudentType=1||Catering=Any||RoomType=Any'>here.</a>",
+      subplaces: ['Postgraduate', 'Self-catered', 'Shared Kitchen Facilities', 'Shared Bathroom']
+    }, {
+      latLng: {lat: 55.950373, lng: -3.178781},
+      title: 'Blackwood Crescent/ Causewayside',
+      content: "Self-catered property. <br> Flats vary from 4-5 bedrooms in size. <br> \
+      For more information click <a href='http://www.accom.ed.ac.uk/property-details/22/blackwood-crescent-causewayside-edinburgh/?back=/for-students/search-for-accommodation/search-results/?StudentType=1||Catering=Any||RoomType=Any'>here.</a>",
+      subplaces: ['Postgraduate', 'Self-catered', 'Shared Kitchen Facilities', 'Shared Bathroom']
+    }, {
+      latLng: {lat: 55.950373, lng: -3.178781},
+      title: 'Ratcliffe Terrace',
+      content: "Self-catered property with 70 single study bedrooms. <br>Flats typically have 6 bedrooms. <br> \
+      For more information click <a href='http://www.accom.ed.ac.uk/property-details/14/ratcliffe-terrace-63-ratcliffe-terrace-edinburgh/?back=/for-students/search-for-accommodation/search-results/?StudentType=1||Catering=Any||RoomType=Any'>here.</a>",
+      subplaces: ['Postgraduate', 'Self-catered', 'Shared Kitchen Facilities', 'Shared Bathroom']
+    }, {
+      latLng: {lat: 55.950373, lng: -3.178781},
+      title: 'Morgan Court',
+      content: "Self-catered property with 90 single study bedrooms.<br>Flats vary from 3-5 bedrooms in size. <br> \
+      For more information click <a href='http://www.accom.ed.ac.uk/property-details/19/morgan-court-morgan-court-slaters-steps-edinburgh/?back=/for-students/search-for-accommodation/search-results/?StudentType=1||Catering=Any||RoomType=Any||p=2'>here.</a>",
+      subplaces: ['Postgraduate', 'Self-catered', 'Shared Kitchen Facilities', 'Shared Bathroom']
+    }, {
+      latLng: {lat: 55.950373, lng: -3.178781},
+      title: 'Holyrood South',
+      content: "Self-catered property with 249 single study bedrooms.<br>Flats vary from 4-6 bedrooms in size. <br> \
+      For more information click <a href='http://www.accom.ed.ac.uk/property-details/51/holyrood-south-96-holyrood-road-edinburgh/?back=/for-students/search-for-accommodation/search-results/?StudentType=1||Catering=Any||RoomType=Any||p=2'>here.</a>",
+      subplaces: ['Postgraduate', 'Self-catered', 'Shared Kitchen Facilities', 'Shared Bathroom']
+    }, {
+      latLng: {lat: 55.950373, lng: -3.178781},
+      title: 'Richmond Place',
+      content: "Self-catered property with 238 single study bedrooms. <br> \
+      For more information click <a href='http://www.accom.ed.ac.uk/property-details/49/richmond-place-7-richmond-place-edinburgh/?back=/for-students/search-for-accommodation/search-results/?StudentType=1||Catering=Any||RoomType=Any||p=2'>here.</a>",
+      subplaces: ['Postgraduate', 'Self-catered', 'Shared Kitchen Facilities', 'En-Suite Bathroom']
+    },{
+      latLng: {lat: 55.950373, lng: -3.178781},
+      title: 'Roxburgh Place',
+      content: "Self-catered property with 59 single study bedrooms.<br>Flats typically have 12 bedrooms.<br> \
+      For more information click <a href='http://www.accom.ed.ac.uk/property-details/10/roxburgh-place-8-roxburgh-place-edinburgh/?back=/for-students/search-for-accommodation/search-results/?StudentType=1||Catering=Any||RoomType=Any||p=2'>here.</a>",
+      subplaces: ['Postgraduate', 'Self-catered', 'Shared Kitchen Facilities', 'Shared Bathroom']
+    },{
+      latLng: {lat: 55.950373, lng: -3.178781},
+      title: 'Ascham Court',
+      content: "Self-catered property.<br>Flats vary from 3-7 bedrooms in size. <br> \
+      For more information click <a href='http://www.accom.ed.ac.uk/property-details/24/ascham-court-edinburgh/?back=/for-students/search-for-accommodation/search-results/?StudentType=1||Catering=Any||RoomType=Any||p=2'>here.</a>",
+      subplaces: ['Postgraduate', 'Self-catered', 'Shared Kitchen Facilities', 'Shared Bathroom']
+    },
 
 
 
