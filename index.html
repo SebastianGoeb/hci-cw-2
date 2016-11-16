@@ -43,15 +43,38 @@
         align-items: baseline;
       }
       #place-buttons .content {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        align-content: flex-start;
-        justify-content: space-between;
       }
       #place-buttons button {
-        flex-basis: 45%;
-        min-height: 7rem;
+        width: 100%;
+        position: relative;
+        color: #fff;
+        background-color: #4f9a6b;
+        box-shadow: 0 6px #346546;
+        margin: 0.5rem 0;
+        border: none;
+        outline: 0;
+        cursor: pointer;
+        padding: 1rem;
+        border-radius: 5px;
+      }
+      #place-buttons button:hover {
+        top: 2px;
+        box-shadow: 0 4px #346546;
+      }
+      #place-buttons button:active {
+        top: 6px;
+        box-shadow: 0 0 #346546;
+      }
+      #place-buttons button::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+      button ul {
+        margin: 0;
       }
       label[for="search-input"] {
         padding: 1em;
@@ -67,15 +90,6 @@
         align-self: stretch;
         font-size: 1rem;
         padding: 1em 1em 1em 3rem;
-      }
-      button {
-        background-color: #c8f3af;
-        box-shadow: 0px 0px 0px 2px white, 0px 0px 0px 10px #c8f3af;
-        border: none;
-        margin: 1rem 0.25rem;
-      }
-      button ul {
-
       }
       .hidden {
         display: none;
