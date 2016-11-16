@@ -154,6 +154,11 @@
           var groupIdx = $(this).attr('group-idx');
           var placeIdx = $(this).attr('place-idx');
           var place = placeGroups[groupIdx].places[placeIdx];
+          if (string !== '') {
+            $('#place-buttons .info').addClass('hidden');
+          } else {
+            $('#place-buttons .info').removeClass('hidden');
+          }
           if (string === '' ||
               place.title.toLowerCase().indexOf(string) != -1 ||
               place.subplaces.join('').toLowerCase().indexOf(string) != -1) {
@@ -241,7 +246,8 @@
             .addClass('content')
             .appendTo(section);
           if (group.content) {
-            var paragraph = $('<p>')
+            var info = $('<p>')
+              .addClass('info')
               .html(group.content)
               .appendTo(content);
           }
