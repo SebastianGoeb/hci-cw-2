@@ -136,7 +136,8 @@
       for (var i = 0; i < places.length; i++) {
         var place = places[i];
         var title = '<h3>' + place.title + '</h3>'
-        var link = '<a href="https://maps.google.com/maps?q=' + place.title.replace(/\s+/g, '+') + '">View on Google Maps</a>';
+        var ll = place.latLng.lat + ',' + place.latLng.lng;
+        var link = '<a href="https://maps.google.com/maps/place/' + ll + '">View on Google Maps</a>';
         place.infoWindowContent = title + '<p>' + place.content + '</p>' + link;
       }
 
