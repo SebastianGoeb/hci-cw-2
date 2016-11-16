@@ -1,5 +1,6 @@
 var banks = {
     title: 'Banks',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum laoreet dignissim. Nunc fringilla ornare tristique. Nulla luctus ex erat, ut aliquet tortor consectetur nec. Phasellus et nisl et eros ultricies facilisis ut ut diam. Etiam facilisis id leo ut cursus. Pellentesque commodo tincidunt enim, id aliquam risus porttitor tempor. Donec urna est, venenatis auctor molestie vel, dictum ac orci. Curabitur sollicitudin ultricies tortor. Phasellus sit amet finibus erat. Donec mattis, leo non aliquet euismod, ex felis dapibus dui, vitae feugiat magna lorem ut tellus. Ut vitae elementum enim, quis vestibulum ante. Sed vitae quam semper nisl scelerisque dapibus. Vivamus pulvinar, nibh ut consequat dictum, massa risus auctor libero, ut sagittis velit eros et sapien. Nam vel ex a turpis sollicitudin porttitor. Nunc nec placerat dui.',
     places: [{
         latLng: {lat: 55.946208, lng: -3.184974},
         title: 'Royal Bank of Scotland',
