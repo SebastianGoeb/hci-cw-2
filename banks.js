@@ -1,5 +1,6 @@
 var banks = {
     title: 'Banks',
+    iconColor: 'green',
     content: '<p>Banks in Edinburgh have experience providing accounts to students from all over the world, so opening an account will not be a problem. Simply meet with one of the bank representatives in a local branch and ask to set up an account.\
     </p>\
     <h3>What do I need to bring?</h3><p>To open an account you will have to bring identification, proof of study, proof of address, and Visa (if applicable). The safest form of identification will be a passport but EU-identification cards and UK drivers licences are also accepted. A bill containing your address and name is acceptable proof of address. Some banks also accept a bank introduction letter from the university. Proof of study is some proof of your unconditional acceptance to your course. This is either a bank introduction letter from the university or your UCAS acceptance letter. The exact documents accepted by each bank will vary but will be available on their webpage, so check before you visit.</p>\
