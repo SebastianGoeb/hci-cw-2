@@ -1,7 +1,8 @@
 
 var accommodations = {
     title: 'Accommodation',
-    content:  
+    iconColor: 'blue',
+    content:
     '<p>The University of Edinburgh has a wide selection of accommodation for its students.\
     Offers for accommodation will be made as early as May, so it\'s best to apply early! You will\
     be able to move in as soon as your lease starts, at the start of September.\

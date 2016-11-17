@@ -127,6 +127,10 @@
       var places = [];
       for (var i = 0; i < placeGroups.length; i++) {
         places = places.concat(placeGroups[i].places);
+        for  (var j = 0; j < placeGroups[i].places.length; j++) {
+          var place = placeGroups[i].places[j];
+          place.iconColor = place.iconColor || placeGroups[i].iconColor || 'red';
+        }
       }
 
       // ---- Construct info window content ----
@@ -208,7 +212,8 @@
             place.marker = new google.maps.Marker({
               position: place.latLng,
               map: map,
-              title: place.title
+              title: place.title,
+              icon: 'http://maps.google.com/mapfiles/ms/icons/' + place.iconColor + '-dot.png'
             });
             place.infoWindow = new google.maps.InfoWindow({
               content: place.infoWindowContent
