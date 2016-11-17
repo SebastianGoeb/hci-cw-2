@@ -69,10 +69,31 @@
       }
       #place-buttons button:active {
         transform: translateY(6px);
-        box-shadow: 0 0 #346546;
       }
       button ul {
         margin: 0;
+      }
+      button.back-to-top {
+        position: fixed;
+        right: 1rem;
+        bottom: 2rem;
+        padding: 1rem;
+        border-radius: 5px;
+        background-color: #888;
+        box-shadow: 0 6px #555;
+        outline: 0;
+        cursor: pointer;
+        border: none;
+        color: white;
+      }
+      button.back-to-top:hover {
+        background-color: #888;
+        transform: translateY(2px);
+        box-shadow: 0 4px #555;
+      }
+      button.back-to-top:active {
+        background-color: #888;
+        transform: translateY(6px);
       }
       label[for="search-input"] {
         padding: 1.17rem 1rem 1rem;
@@ -111,6 +132,9 @@
       <section id="place-buttons" class="accordion">
       </section>
     </aside>
+    <button class="back-to-top hidden">
+      <i class="fa fa-chevron-up fa-2x"></i>
+    </button>
     <!-- Functionality -->
     <script src=accommodation.js></script>
     <script src=buildings.js></script>
@@ -142,6 +166,22 @@
         place.infoWindowContent = title + '<p>' + place.content + '</p>' + link;
       }
 
+      // ---- Back to top functionality ----
+      $('#places')
+        .scroll(function () {
+          if ($(this).scrollTop() > 50) {
+            $('.back-to-top')
+              .removeClass('hidden');
+          } else {
+            $('.back-to-top')
+              .addClass('hidden');
+          }
+        });
+      $('.back-to-top')
+        .click(function () {
+          $('#places').animate({ scrollTop: 0 });
+        })
+
       // ---- Search functionality ----
       $('#search-input')
         .on('change keyup paste', function () {
@@ -167,8 +207,10 @@
               place.title.toLowerCase().indexOf(string) != -1 ||
               place.subplaces.join('').toLowerCase().indexOf(string) != -1) {
             $(this).removeClass('hidden');
+            place.marker.setVisible(true);
           } else {
             $(this).addClass('hidden');
+            place.marker.setVisible(false);
           }
         });
       }
