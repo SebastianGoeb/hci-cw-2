@@ -4,7 +4,7 @@ var accommodations = {
     iconColor: 'blue',
     content:
     '<p>The University of Edinburgh has a wide selection of accommodation for its students.\
-    Offers for accommodation will be made as early as May, so it\'s best to apply early! You will\
+    The University will make offers for accommodation as early as May, so it\'s best to apply early! You will\
     be able to move in as soon as your lease starts, at the start of September.\
     For more information please visit the <a href="http://www.accom.ed.ac.uk/">Accommodation Services website</a>.</p>\
     <h3>Undergraduate Accommodation</h3>\
@@ -13,13 +13,14 @@ var accommodations = {
       The deadline for applying is the 16th August and they must have an Unconditional Firm (UF) on UCAS by\
       the 30th August.</p>\
     <h3>Postgraduate Accommodation</h3>\
-      <p>PG Reasearch Students will be guaranteed accommodation regardless of whether they are from within the UK, the EU or\
-      international. Taught PG students will only be guranteed accommodation if they are from outside the EU.\
+      <p>Regardless of whether they are from within the UK, the EU or international,\
+      PG Reasearch Students will be guaranteed accommodation. Taught PG students will only be guranteed accommodation if they are from outside the EU.\
       The deadline for applying is the 31st July and they must have an Unconditional Firm (UF) on UCAS by\
       the 31st July.</p>\
     <h3>How to Apply</h3>\
-      <p>Even if you do not meet the above condition, you may still apply for university accommodation.\
+      <p>Even if you do not meet the above conditions, you may still apply for university accommodation.\
       Applications are made through the "Student Accommodation Hub" on <a href="https://www.myed.ed.ac.uk/">MyEd</a>.\
+      The University will do their best to allocate you to one of your prefered accommodations, though this will not always possible.\
       For more information on applying, please visit <a href="http://www.accom.ed.ac.uk/for-students/ready-to-apply/">this page</a>.',
     
 

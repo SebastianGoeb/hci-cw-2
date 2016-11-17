@@ -52,4 +52,5 @@ button li {
 /* Miscellaneous */
 p {
     margin: 0.3rem 0 0.5rem;
+    text-align: justify;
 }
