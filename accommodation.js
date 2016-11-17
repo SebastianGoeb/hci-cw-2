@@ -8,7 +8,7 @@ var accommodations = {
     For more information please visit the <a href="http://www.accom.ed.ac.uk/">Accommodation Services website</a>.</p>\
     <h3>Undergraduate Accommodation</h3>\
       <p>UG Students at the University of Edinburgh will be guaranteed university accommodation in\
-      their first year, as long as they usually reside outside the City of Edinburgh.\
+      their first year, as long as their home address is outside the City of Edinburgh.\
       The deadline for applying is the 16th August and they must have an Unconditional Firm (UF) on UCAS by\
       the 30th August.</p>\
     <h3>Postgraduate Accommodation</h3>\
@@ -140,22 +140,14 @@ var accommodations = {
       latLng: {lat: 55.940074, lng: -3.171136},
       title: 'Pollock Halls',
       content: 'Comprised of \
-      <a href="http://www.accom.ed.ac.uk/property-details/6/chancellors-court-pollock-halls-of-residence-18-holyrood-park-road-edinburgh \
-      /?back=/for-students/search-for-accommodation/search-results/?StudentType=2||Catering=Any||RoomType=Any||pageSize=1000">Chancellor\'s Court</a>, \
-      <a href="http://www.accom.ed.ac.uk/property-details/44/john-burnett-house-pollock-halls-of-residence-18-holyrood-park-road-edinburgh \
-      /?back=/for-students/search-for-accommodation/search-results/?StudentType=2||Catering=Any||RoomType=Any||pageSize=1000">John Burnett House</a>, \
-      <a href="http://www.accom.ed.ac.uk/property-details/37/lee-house-pollock-halls-of-residence-18-holyrood-park-road-edinburgh/? \
-      back=/for-students/search-for-accommodation/search-results/?StudentType=2||Catering=Any||RoomType=Any||pageSize=1000">Lee House</a>, \
-      <a href="http://www.accom.ed.ac.uk/property-details/23/grant-house-grant-house-pollock-halls-of-residence-18-holyrood-park-road-edinburgh \
-      /?back=/for-students/search-for-accommodation/search-results/?StudentType=2||Catering=Any||RoomType=Any||pageSize=1000">Grant House</a>, \
-      <a href = "http://www.accom.ed.ac.uk/property-details/3/baird-house-pollock-halls-of-residence-18-holyrood-park-road-edinburgh/? \
-      back=/for-students/search-for-accommodation/search-results/?StudentType=2||Catering=Any||RoomType=Any||pageSize=1000">Baird House</a>, \
-      <a href = "http://www.accom.ed.ac.uk/property-details/17/ewing-house-pollock-halls-of-residence-18-holyrood-park-road-edinburgh \
-      /?back=/for-students/search-for-accommodation/search-results/?StudentType=2||Catering=Any||RoomType=Any||pageSize=1000">Ewing House</a>, \
-      <a href = "http://www.accom.ed.ac.uk/property-details/45/turner-house-pollock-halls-of-residence-18-holyrood-park-road-edinburgh \
-      /?back=/for-students/search-for-accommodation/search-results/?StudentType=2||Catering=Any||RoomType=Any||pageSize=1000">Turner House</a>, \
-      <a href = "http://www.accom.ed.ac.uk/property-details/28/holland-house-pollock-halls-of-residence-18-holyrood-park-road-edinburgh \
-      /?back=/for-students/search-for-accommodation/search-results/?StudentType=2||Catering=Any||RoomType=Any||pageSize=1000">Holland House</a> .',
+      <a href="http://www.accom.ed.ac.uk/property-details/6/chancellors-court-pollock-halls-of-residence-18-holyrood-park-road-edinburgh/?back=/for-students/search-for-accommodation/search-results/?StudentType=2||Catering=Any||RoomType=Any||pageSize=1000">Chancellor\'s Court</a>, \
+      <a href="http://www.accom.ed.ac.uk/property-details/44/john-burnett-house-pollock-halls-of-residence-18-holyrood-park-road-edinburgh/?back=/for-students/search-for-accommodation/search-results/?StudentType=2||Catering=Any||RoomType=Any||pageSize=1000">John Burnett House</a>, \
+      <a href="http://www.accom.ed.ac.uk/property-details/37/lee-house-pollock-halls-of-residence-18-holyrood-park-road-edinburgh/?back=/for-students/search-for-accommodation/search-results/?StudentType=2||Catering=Any||RoomType=Any||pageSize=1000">Lee House</a>, \
+      <a href="http://www.accom.ed.ac.uk/property-details/23/grant-house-grant-house-pollock-halls-of-residence-18-holyrood-park-road-edinburgh/?back=/for-students/search-for-accommodation/search-results/?StudentType=2||Catering=Any||RoomType=Any||pageSize=1000">Grant House</a>, \
+      <a href = "http://www.accom.ed.ac.uk/property-details/3/baird-house-pollock-halls-of-residence-18-holyrood-park-road-edinburgh/?back=/for-students/search-for-accommodation/search-results/?StudentType=2||Catering=Any||RoomType=Any||pageSize=1000">Baird House</a>, \
+      <a href = "http://www.accom.ed.ac.uk/property-details/17/ewing-house-pollock-halls-of-residence-18-holyrood-park-road-edinburgh/?back=/for-students/search-for-accommodation/search-results/?StudentType=2||Catering=Any||RoomType=Any||pageSize=1000">Ewing House</a>, \
+      <a href = "http://www.accom.ed.ac.uk/property-details/45/turner-house-pollock-halls-of-residence-18-holyrood-park-road-edinburgh/?back=/for-students/search-for-accommodation/search-results/?StudentType=2||Catering=Any||RoomType=Any||pageSize=1000">Turner House</a>, \
+      <a href = "http://www.accom.ed.ac.uk/property-details/28/holland-house-pollock-halls-of-residence-18-holyrood-park-road-edinburgh/?back=/for-students/search-for-accommodation/search-results/?StudentType=2||Catering=Any||RoomType=Any||pageSize=1000">Holland House</a> .',
       subplaces: ['Undergraduate', 'Catered', 'Shared Bathroom', 'En-suite Bathroom', 'Common Room']
     }, {
       latLng: {lat: 55.944992, lng:  -3.203468},
